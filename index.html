@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Making AI Make Sense: A Student Guide | Jacob Levy</title>
+    <meta
+      name="description"
+      content="A practical student guide to AI in coursework. Check course policy, protect your voice, verify sources, and decide what to do next."
+    />
+    <meta name="theme-color" content="#162f38" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Making AI Make Sense: A Student Guide" />
+    <meta
+      property="og:description"
+      content="AI can help. The judgment is yours. A student guide to thoughtful AI use in coursework, by Jacob Levy."
+    />
+    <meta
+      property="og:url"
+      content="https://jjlevyy.github.io/responsible-ai-student-guide/"
+    />
+    <link
+      rel="canonical"
+      href="https://jjlevyy.github.io/responsible-ai-student-guide/"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23162f38'/%3E%3Cpath d='M15 47V17h8l9 18 9-18h8v30h-7V29L32 47 22 29v18Z' fill='%23f6f5ef'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- Reading progress is visual only, avoiding noisy scroll announcements. -->
+    <div class="reading-progress" aria-hidden="true">
+      <span id="reading-progress"></span>
+    </div>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a
+          class="wordmark"
+          href="#main"
+          aria-label="Making AI Make Sense, top of page"
+          >Making AI<br /><span>Make Sense</span></a
+        >
+        <nav aria-label="Main navigation">
+          <a href="#decide">Decide</a><a href="#scenarios">Scenarios</a
+          ><a href="#practice">Practice</a><a href="#about">About</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">Making AI<br />Make <em>Sense.</em></h1>
+          <p class="hero-description">
+            A student guide to using AI for coursework—without losing your
+            voice, your learning, or your integrity.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#decide"
+              >Should I use AI for this?
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M5 12h14M13 6l6 6-6 6" /></svg></a
+            ><a class="text-link" href="#scenarios">Explore real situations</a>
+          </div>
+          <p class="byline">
+            By Jacob Levy <span aria-hidden="true">/</span> A redesigned
+            portfolio iteration
+          </p>
+        </div>
+        <aside class="hero-note" aria-label="The guide’s central principle">
+          <span class="note-rule" aria-hidden="true"></span>
+          <p class="note-title">
+            AI can help.<br />The judgment<br />is <em>yours.</em>
+          </p>
+          <p>
+            Check the rules. Think for yourself.<br />Be clear about the help
+            you used.
+          </p>
+          <a href="#context"
+            >The ideas behind this guide
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M7 17 17 7M7 7h10v10" /></svg
+          ></a>
+        </aside>
+      </section>
+
+      <div class="orientation wrap">
+        <p>
+          A useful starting point,<br /><strong
+            >not a substitute for your course policy.</strong
+          >
+        </p>
+        <p>
+          Start with one assignment. Work through the checks below, then use the
+          guide to plan your next step.
+        </p>
+      </div>
+
+      <section
+        id="decide"
+        class="decision-section"
+        aria-labelledby="decide-title"
+      >
+        <div class="wrap decision-layout">
+          <div class="decision-intro reveal">
+            <h2 id="decide-title">
+              A better answer <br />starts with a <br /><em
+                >better question.</em
+              >
+            </h2>
+            <p>
+              Should I use AI for this? Let’s work it out, one check at a time.
+            </p>
+            <p class="policy-note">
+              Your syllabus, assignment instructions, and instructor’s guidance
+              come first. This tool offers a next step; it cannot authorize AI
+              use.
+            </p>
+            <p class="privacy-note">
+              Your answers stay on this page. They are not saved or sent
+              anywhere.
+            </p>
+          </div>
+          <div class="decision-panel">
+            <!-- Enhanced tool is shown only after JS initializes successfully. -->
+            <div id="decision-tool" hidden>
+              <div class="tool-meta">
+                <span id="step-label">Check 1 · Course policy</span
+                ><span id="tool-state">Decision guide</span>
+              </div>
+              <div class="step-track" aria-hidden="true">
+                <span id="step-fill"></span>
+              </div>
+              <div id="question-view">
+                <h3 id="question-title" tabindex="-1"></h3>
+                <p id="question-help"></p>
+                <div
+                  class="answers"
+                  role="group"
+                  aria-labelledby="question-title"
+                  aria-describedby="question-help"
+                >
+                  <button type="button" data-answer="yes">Yes</button
+                  ><button type="button" data-answer="no">No</button
+                  ><button type="button" data-answer="unsure">Not sure</button>
+                </div>
+              </div>
+              <div id="result-view" hidden>
+                <p id="result-category" class="result-category"></p>
+                <h3 id="result-title" tabindex="-1"></h3>
+                <p id="result-copy"></p>
+                <p id="personal-note" hidden>
+                  Because this involves your own experience or reflection, keep
+                  the ideas and final wording yours. Even editing help must fit
+                  your instructor’s policy.
+                </p>
+                <a id="result-link" class="button primary" href="#practice"></a>
+              </div>
+              <div class="tool-controls">
+                <button
+                  id="back-button"
+                  class="quiet-button"
+                  type="button"
+                  disabled
+                >
+                  Back</button
+                ><button id="reset-button" class="quiet-button" type="button">
+                  Start over
+                </button>
+              </div>
+              <p
+                id="tool-status"
+                class="sr-only"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+              ></p>
+            </div>
+            <div id="decision-fallback">
+              <h3>Should I use AI for this?</h3>
+              <p>
+                Use these checks in order. If an answer is unclear, pause and
+                ask your instructor.
+              </p>
+              <ol class="fallback-list">
+                <li>
+                  <strong>Check your course policy.</strong> If AI is
+                  prohibited, do the work without it. If the rules are unclear,
+                  ask first.
+                </li>
+                <li>
+                  <strong>Check assessment rules.</strong> For exams or quizzes,
+                  use AI only with explicit permission for the specific use.
+                </li>
+                <li>
+                  <strong>Keep reflection personal.</strong> Your experiences,
+                  ideas, and final wording should remain yours.
+                </li>
+                <li>
+                  <strong>Verify the output.</strong> If you cannot evaluate its
+                  claims, read course materials and real sources first.
+                </li>
+                <li>
+                  <strong>Protect private information.</strong> Leave out
+                  sensitive data and material you do not have permission to
+                  share.
+                </li>
+                <li>
+                  <strong>Be transparent.</strong> Follow disclosure
+                  requirements and describe the help accurately.
+                </li>
+              </ol>
+              <a class="text-link" href="#practice"
+                >Plan a responsible approach</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="scenarios"
+        class="wrap section-space"
+        aria-labelledby="scenarios-title"
+      >
+        <div class="section-heading reveal">
+          <h2 id="scenarios-title">
+            Same tool.<br /><em>Different boundaries.</em>
+          </h2>
+          <p>
+            What makes sense depends on the task. Each example assumes your
+            course allows the specific kind of help described.
+          </p>
+        </div>
+        <div class="scenario-list">
+          <article class="scenario">
+            <h3>Personal essay<br /><span>Keep it personal.</span></h3>
+            <div>
+              <p>
+                <strong>Possible support:</strong> Feedback on grammar or
+                clarity in a draft you wrote, if permitted.
+              </p>
+              <p>
+                <strong>Keep yours:</strong> Your experiences, perspective, and
+                final wording. Do not ask AI to invent a personal story or write
+                the reflection for you.
+              </p>
+            </div>
+          </article>
+          <article class="scenario">
+            <h3>
+              Group presentation<br /><span>Build on shared thinking.</span>
+            </h3>
+            <div>
+              <p>
+                <strong>Possible support:</strong> Brainstorm an outline or
+                discussion questions. Compare any summary against the original
+                reading.
+              </p>
+              <p>
+                <strong>Keep yours:</strong> Your group’s argument, selected
+                sources, and interpretation. Agree on AI use and disclosure as a
+                group.
+              </p>
+            </div>
+          </article>
+          <article class="scenario">
+            <h3>Research paper<br /><span>Go back to the source.</span></h3>
+            <div>
+              <p>
+                <strong>Possible support:</strong> Refine a question, identify
+                search terms, or explore ways to organize your argument.
+              </p>
+              <p>
+                <strong>Keep yours:</strong> Research, evidence, and analysis.
+                Locate and read real sources; never treat a chatbot’s citation
+                as proof that a source exists.
+              </p>
+            </div>
+          </article>
+          <article class="scenario">
+            <h3>Exam or quiz<br /><span>Explicit permission first.</span></h3>
+            <div>
+              <p>
+                <strong>The boundary:</strong> Only use AI when assessment
+                instructions explicitly allow it and explain how.
+              </p>
+              <p>
+                That includes checking answers. A take-home format does not
+                automatically make AI use acceptable. When in doubt, ask before
+                using it.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="practice"
+        class="practice-section section-space"
+        aria-labelledby="practice-title"
+      >
+        <div class="wrap">
+          <div class="section-heading reveal">
+            <h2 id="practice-title">
+              Use it to support<br /><em>the work you do.</em>
+            </h2>
+            <p>
+              Permission is the starting point. When AI is allowed, choose a
+              limited role that helps you understand and improve your own work.
+            </p>
+          </div>
+          <div class="practice-grid">
+            <article>
+              <h3>Brainstorm possibilities</h3>
+              <p>
+                Ask for questions or angles to consider. Choose what fits the
+                assignment, discard what does not, and develop the ideas
+                yourself.
+              </p>
+            </article>
+            <article>
+              <h3>Shape an outline</h3>
+              <p>
+                Use a suggested structure as something to evaluate. Revise it
+                around your argument and fill it with evidence you have read.
+              </p>
+            </article>
+            <article>
+              <h3>Clarify a reading</h3>
+              <p>
+                Ask for an explanation of a difficult concept. Return to the
+                original text to check what was simplified, omitted, or
+                misrepresented.
+              </p>
+            </article>
+            <article>
+              <h3>Review your draft</h3>
+              <p>
+                Request feedback on clarity, organization, or grammar against
+                the assignment rubric. Review each suggestion and make the final
+                decisions.
+              </p>
+            </article>
+          </div>
+          <div class="boundary-note">
+            <strong>A useful boundary</strong>
+            <p>
+              Avoid outsourcing a full essay, inventing citations, or using
+              generated language to simulate understanding you have not
+              developed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="voice"
+        class="wrap section-space voice-layout"
+        aria-labelledby="voice-title"
+      >
+        <div class="reveal">
+          <h2 id="voice-title">
+            Sound like yourself.<br /><em>Think for yourself.</em>
+          </h2>
+          <p>
+            Polished wording is not the same as a strong argument. Your work
+            should reflect what you understand and can explain.
+          </p>
+          <ul class="plain-list">
+            <li>Start with your own claim, notes, or draft.</li>
+            <li>Use course readings and examples you chose.</li>
+            <li>Remove vague claims and language you would not use.</li>
+            <li>Be able to explain every argument and source.</li>
+          </ul>
+        </div>
+        <aside class="disclosure-example" aria-labelledby="disclosure-title">
+          <h3 id="disclosure-title">Make the help visible.</h3>
+          <p>
+            Describe your actual process and follow your instructor’s required
+            format. Adapt this example only if it is accurate:
+          </p>
+          <blockquote>
+            “I used an AI tool to suggest an outline and flag unclear sentences.
+            I revised the structure, checked the sources, and made the final
+            writing decisions.”
+          </blockquote>
+          <p class="small">
+            Keep prompts or drafts if your course asks for them. A disclosure
+            does not make prohibited use acceptable.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        id="ethics"
+        class="ethics-section section-space"
+        aria-labelledby="ethics-title"
+      >
+        <div class="wrap ethics-layout">
+          <div class="reveal">
+            <h2 id="ethics-title">
+              Before you submit,<br /><em>take a second look.</em>
+            </h2>
+            <p>
+              If you cannot answer these questions confidently, pause and change
+              your approach.
+            </p>
+          </div>
+          <ul class="ethics-list">
+            <li>
+              <strong>Can I verify it?</strong
+              ><span
+                >Check factual claims, quotations, and citations against
+                credible sources or course materials.</span
+              >
+            </li>
+            <li>
+              <strong>Can I explain my process?</strong
+              ><span
+                >Identify where AI helped and describe that help honestly.</span
+              >
+            </li>
+            <li>
+              <strong>Did I protect private information?</strong
+              ><span
+                >Do not share personal, sensitive, or confidential material, or
+                someone else’s work without permission.</span
+              >
+            </li>
+            <li>
+              <strong>Does it meet the assignment’s rules?</strong
+              ><span
+                >Follow the specific policy, including restrictions and
+                disclosure requirements.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section
+        id="context"
+        class="wrap section-space"
+        aria-labelledby="context-title"
+      >
+        <div class="section-heading reveal">
+          <h2 id="context-title">
+            The thinking<br /><em>behind the guide.</em>
+          </h2>
+          <p>
+            The original college project connected practical choices to course
+            discussions of AI, power, and responsibility. These are the
+            project’s takeaways, not direct quotations.
+          </p>
+        </div>
+        <dl class="reading-list">
+          <div>
+            <dt>Crawford</dt>
+            <dd>
+              Treat AI as infrastructure that depends on data and labor, rather
+              than as magic. Consider what you put into a system.
+            </dd>
+          </div>
+          <div>
+            <dt>Noble &amp; Benjamin</dt>
+            <dd>
+              Question how bias can be reflected in systems and reproduced in
+              writing. Read outputs critically rather than accepting them at
+              face value.
+            </dd>
+          </div>
+          <div>
+            <dt>Gunkel</dt>
+            <dd>
+              Question the impulse to treat systems as neutral or humanlike. Use
+              explicit checks instead of relying on how convincing an answer
+              sounds.
+            </dd>
+          </div>
+        </dl>
+        <p class="source-note">
+          Based on the course connections in
+          <a href="https://jjlevyy.github.io/responsible-ai-student-guide/"
+            >Jacob’s original student guide</a
+          >. The supplied project did not include specific reading titles or
+          page references; no bibliography has been invented for this iteration.
+        </p>
+      </section>
+
+      <section
+        id="accessibility"
+        class="accessibility-section section-space"
+        aria-labelledby="accessibility-title"
+      >
+        <div class="wrap accessibility-layout">
+          <div class="reveal">
+            <h2 id="accessibility-title">
+              A guide everyone<br /><em>can work through.</em>
+            </h2>
+            <p>
+              Accessibility is part of the experience, from the reading order to
+              the next question. These practices replace the original checklist.
+            </p>
+          </div>
+          <div>
+            <ul class="plain-list">
+              <li>
+                <strong>Keyboard access:</strong> Use Tab and Shift+Tab to move;
+                Enter or Space to activate buttons. Focus stays visible.
+              </li>
+              <li>
+                <strong>Clear structure:</strong> Semantic headings, landmarks,
+                and a skip link support navigation.
+              </li>
+              <li>
+                <strong>Understandable steps:</strong> Each question has labeled
+                choices. The tool moves focus to the new question or result.
+              </li>
+              <li>
+                <strong>Readable content:</strong> High-contrast text,
+                comfortable line lengths, and layouts that reflow when you zoom.
+              </li>
+              <li>
+                <strong>Reduced motion:</strong> Your device’s reduced-motion
+                setting disables scroll and transition animation.
+              </li>
+              <li>
+                <strong>Useful alternatives:</strong> The decision checks remain
+                readable without JavaScript.
+              </li>
+            </ul>
+            <p class="small">
+              Image strategy: this version uses text rather than content images.
+              Decorative marks are hidden from assistive technology. Any future
+              informative image needs alt text that describes its purpose;
+              decorative images should use empty alt text.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="wrap section-space about-layout"
+        aria-labelledby="about-title"
+      >
+        <div class="reveal">
+          <h2 id="about-title">
+            A class project.<br /><em>A continuing practice.</em>
+          </h2>
+          <p>
+            Hi, I’m Jacob Levy. I created the original guide after seeing
+            classmates rely on AI without clear boundaries for their own voice
+            or academic responsibilities.
+          </p>
+          <p>
+            This version is an improved portfolio iteration of that college
+            project. It preserves the original purpose and course connections
+            while rewriting unclear copy, resolving contradictory advice, and
+            adding an interactive, accessible decision flow.
+          </p>
+        </div>
+        <div class="about-details">
+          <h3>How I used AI to build this site</h3>
+          <p>
+            For this portfolio iteration, an AI coding assistant helped rewrite
+            copy, develop the visual direction, generate HTML, CSS, and
+            JavaScript, and run automated checks. Superdesign supported visual
+            prototyping; Impeccable guided design and review.
+          </p>
+          <p>
+            The earlier guide supplied the content baseline. AI assistance is
+            part of the development process, and this iteration should be
+            reviewed against course requirements before it is presented as
+            coursework.
+          </p>
+          <p class="small">
+            This disclosure describes the redesign process. It does not claim
+            that the original submitted assignment used the same tools or
+            contained these improvements.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <p class="footer-title">
+            More thoughtful tools.<br /><em>More room for your voice.</em>
+          </p>
+          <div>
+            <p>A student guide by <strong>Jacob Levy</strong></p>
+            <a href="https://github.com/jjlevyy/responsible-ai-student-guide"
+              >Project on GitHub
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M7 17 17 7M7 7h10v10" /></svg></a
+            ><span class="linkedin-placeholder"
+              >LinkedIn — profile link coming soon</span
+            >
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Jacob Levy · Portfolio iteration</p>
+          <a href="#main">Back to top <span aria-hidden="true">↑</span></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
